@@ -215,6 +215,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 5. INTERACTIVE SCRATCH CARDS SYSTEM
   const initScratchCards = () => {
+    let clearedCount = 0;
+
     const scratchConfigs = [
       { id: "scratch-month-canvas" },
       { id: "scratch-day-canvas" },
@@ -227,6 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const sCtx = canvasEl.getContext("2d");
       let isDrawing = false;
+      let isCleared = false;
 
       // Handle scaling properly
       const rect = canvasEl.getBoundingClientRect();
@@ -279,6 +282,8 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       const checkClearedPercent = () => {
+        if (isCleared) return;
+
         const imgData = sCtx.getImageData(0, 0, canvasEl.width, canvasEl.height);
         const pixels = imgData.data;
         let cleared = 0;
@@ -292,11 +297,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const totalSamples = pixels.length / 16;
         if (cleared / totalSamples > 0.40) { // 40% cleared
+          isCleared = true;
           canvasEl.style.opacity = "0";
           canvasEl.style.pointerEvents = "none";
           setTimeout(() => {
             canvasEl.style.display = "none";
           }, 500);
+
+          // Track overall cleared cards
+          clearedCount++;
+          if (clearedCount === 3) {
+            // Unlock rest of the page!
+            const mainContent = document.getElementById("main-content");
+            if (mainContent) {
+              mainContent.classList.remove("scratch-locked");
+            }
+            // Trigger reveals for newly visible elements
+            initScrollReveal();
+          }
         }
       };
 
