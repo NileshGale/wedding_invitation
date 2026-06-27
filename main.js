@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // Start envelope opening transition
       envelope.classList.add("open");
       
+      // Hide the wax seal button immediately
+      openBtn.style.opacity = "0";
+      openBtn.style.pointerEvents = "none";
+      openBtn.style.transform = "translate(-50%, -40%) scale(0)";
+      
       // Attempt to play music on interaction
       playMusic();
 

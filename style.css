@@ -1339,13 +1339,23 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 3px;
 }
 
 .wax-seal__heart {
-  width: 28px;
-  height: 28px;
+  width: 14px;
+  height: 14px;
   color: var(--accent-light);
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
+}
+
+.wax-seal__initial {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 /* Open State */
