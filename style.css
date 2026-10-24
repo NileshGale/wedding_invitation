@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 /* GLOBAL CSS RESET & VARIABLES */
 :root {
@@ -1378,8 +1378,9 @@ section {
 
 .scratch-subtitle {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  color: var(--text-muted);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary-color);
   font-style: italic;
   margin-bottom: 3.5rem;
   letter-spacing: 0.5px;
@@ -1414,19 +1415,31 @@ section {
   width: 190px;
   height: 250px;
   border-radius: 16px;
-  overflow: hidden;
   box-shadow: 0 12px 30px rgba(80, 34, 32, 0.12);
-  border: 2px solid var(--accent-color);
   background: #ffffff;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  cursor: pointer;
 }
 
-.scratch-card-wrapper:hover {
-  transform: translateY(-4px);
+.scratch-card-wrapper:hover,
+.scratch-col:hover .scratch-card-wrapper {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(80, 34, 32, 0.18), 
+              0 0 25px rgba(212, 175, 55, 0.45), 
+              0 0 50px rgba(232, 206, 115, 0.25);
+}
+
+.scratch-col:hover .scratch-col-label {
+  color: var(--accent-light);
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
 
 .scratch-card__under {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -1442,6 +1455,8 @@ section {
   letter-spacing: 1px;
   padding: 1rem;
   text-align: center;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .scratch-canvas {
@@ -1454,6 +1469,116 @@ section {
   cursor: pointer;
   touch-action: none;
   transition: opacity 0.5s ease;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* LIGHTNING BORDER EFFECT (START TO END INFINITY) */
+.lightning-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 10;
+  overflow: visible;
+}
+
+.lightning-track {
+  fill: none;
+  stroke: var(--accent-color);
+  stroke-width: 2px;
+  opacity: 0.85;
+  transition: stroke 0.3s ease, opacity 0.3s ease;
+}
+
+.scratch-card-wrapper:hover .lightning-track,
+.scratch-col:hover .lightning-track {
+  stroke: #e8ce73;
+  opacity: 1;
+}
+
+/* Outer golden lightning aura */
+.lightning-glow {
+  fill: none;
+  stroke: #d4af37;
+  stroke-width: 4.5px;
+  stroke-linecap: round;
+  stroke-dasharray: 240 760;
+  stroke-dashoffset: 0;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px #e8ce73) drop-shadow(0 0 14px #d4af37);
+  transition: opacity 0.25s ease;
+}
+
+/* Intense white-gold lightning bolt core */
+.lightning-bolt {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  stroke-dasharray: 180 820;
+  stroke-dashoffset: 0;
+  opacity: 0;
+  filter: drop-shadow(0 0 4px #ffffff) drop-shadow(0 0 8px #ffd700);
+  transition: opacity 0.25s ease;
+}
+
+/* Blazing white-hot electric spark head */
+.lightning-spark {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 4.5px;
+  stroke-linecap: round;
+  stroke-dasharray: 45 955;
+  stroke-dashoffset: 0;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px #ffffff) drop-shadow(0 0 14px #ffffff) drop-shadow(0 0 25px #ffe066);
+  transition: opacity 0.25s ease;
+}
+
+/* Infinite lightning orbit activation on hover */
+.scratch-card-wrapper:hover .lightning-glow,
+.scratch-col:hover .lightning-glow,
+.scratch-card-wrapper:hover .lightning-bolt,
+.scratch-col:hover .lightning-bolt,
+.scratch-card-wrapper:hover .lightning-spark,
+.scratch-col:hover .lightning-spark {
+  opacity: 1;
+  animation: lightningOrbit 1.8s linear infinite;
+}
+
+.scratch-card-wrapper:hover .lightning-spark,
+.scratch-col:hover .lightning-spark {
+  animation: lightningOrbit 1.8s linear infinite, lightningFlicker 0.12s ease-in-out infinite alternate;
+}
+
+/* Traces perimeter from start to end continuously to infinity */
+@keyframes lightningOrbit {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -1000;
+  }
+}
+
+/* Electric high-voltage shimmer */
+@keyframes lightningFlicker {
+  0% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 12px #ffe066) drop-shadow(0 0 22px #d4af37);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px #ffffff) drop-shadow(0 0 18px #ffffff) drop-shadow(0 0 32px #ffd700);
+  }
+  100% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 4px #ffffff) drop-shadow(0 0 10px #e8ce73) drop-shadow(0 0 18px #d4af37);
+  }
 }
 
 .scratch-hint {
