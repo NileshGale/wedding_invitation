@@ -1943,6 +1943,18 @@ section {
   border-bottom-left-radius: 40px;
 }
 
+.reception-card .venue-img-container {
+  aspect-ratio: 4 / 5;
+  max-height: 560px;
+  background: #0d0606;
+}
+
+.reception-card .venue-img {
+  object-fit: cover;
+  object-position: center top;
+  transform-origin: center top;
+}
+
 .reception-time-badge {
   display: inline-flex;
   align-items: center;
