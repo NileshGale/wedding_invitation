@@ -1695,24 +1695,306 @@ section {
   transform: translateY(-2px);
 }
 
-/* MEDIA QUERIES RESPONSIVENESS */
-@media (max-width: 768px) {
-  .scratch-grid {
-    grid-template-columns: 1fr;
+/* ==========================================================================
+   COMPREHENSIVE RESPONSIVE DESIGN (MOBILE, IPAD / TABLETS, & LAPTOPS)
+   ========================================================================== */
+
+/* Touch Device Optimization: Enable lightning border on finger touch */
+.scratch-card-wrapper:active,
+.scratch-col:active .scratch-card-wrapper {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(80, 34, 32, 0.18), 
+              0 0 25px rgba(212, 175, 55, 0.45), 
+              0 0 50px rgba(232, 206, 115, 0.25);
+}
+
+.scratch-card-wrapper:active .lightning-glow,
+.scratch-col:active .lightning-glow,
+.scratch-card-wrapper:active .lightning-bolt,
+.scratch-col:active .lightning-bolt,
+.scratch-card-wrapper:active .lightning-spark,
+.scratch-col:active .lightning-spark {
+  opacity: 1;
+  animation: lightningOrbit 1.8s linear infinite;
+}
+
+/* 1. Laptops & Large Tablets (max-width: 1100px) */
+@media (max-width: 1100px) {
+  .gallery-grid {
+    max-width: 900px;
     gap: 2rem;
-    max-width: 220px;
   }
 }
 
-@media (max-width: 500px) {
+/* 2. iPads & Medium Tablets (max-width: 900px) */
+@media (max-width: 900px) {
+  section {
+    padding: 4.5rem 1.5rem;
+  }
+  .sec-heading {
+    font-size: 2.6rem;
+    margin-bottom: 2.5rem;
+  }
+  .hero-card {
+    max-width: 580px;
+    padding: 3.5rem 2rem;
+  }
+  .couple-name {
+    font-size: 3rem;
+  }
+  .scratch-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 680px;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 650px;
+    gap: 2rem;
+  }
+  .venue-card {
+    max-width: 500px;
+    padding: 2.2rem 1.8rem;
+  }
+}
+
+/* 3. Phablets & Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .envelope-wrapper {
+    transform: scale(0.85);
+  }
+  .envelope-tap-title {
+    font-size: 2.2rem;
+  }
+  .hero-card {
+    padding: 3rem 1.5rem;
+    border-radius: 24px;
+  }
+  .cd-card {
+    padding: 2.5rem 1.5rem;
+  }
+  .cd-date {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+}
+
+/* 4. Mobile Phones (max-width: 640px) */
+@media (max-width: 640px) {
+  /* Scratch cards switch gracefully to 1 column on phones */
+  .scratch-grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+    max-width: 250px;
+    justify-items: center;
+  }
+}
+
+/* 5. Mobile Phones (max-width: 600px) */
+@media (max-width: 600px) {
+  body {
+    font-size: 0.95rem;
+  }
+  section {
+    padding: 3.5rem 1rem;
+  }
+  .sec-label {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+  }
+  .sec-heading {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Entry Gate Envelope */
   .envelope-wrapper {
     transform: scale(0.72);
   }
+  .envelope-tap-title {
+    font-size: 1.85rem;
+    letter-spacing: 1px;
+  }
+  .entry-gate__names {
+    font-size: 2.2rem;
+  }
+  
+  /* Hero Section */
+  #hero {
+    padding: 2.5rem 1rem;
+    min-height: auto;
+  }
+  .hero-card {
+    padding: 2.5rem 1.2rem;
+    border-radius: 20px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  .hero-corner {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border-top-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+  }
+  .hero-icon {
+    width: 58px;
+    height: 58px;
+  }
+  .god-quote {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  .intro-text {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+  }
+  .couple-name {
+    font-size: 2.3rem;
+    margin: 1rem 0;
+  }
+  .amp-row {
+    gap: 1rem;
+  }
+  .amp-line {
+    width: 50px;
+  }
+  .parent-sub {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Scratch Card Section */
+  .scratch-subtitle {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Countdown Section */
+  .cd-card {
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  .cd-heading {
+    font-size: 2.2rem;
+  }
+  .cd-date {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 1.6rem;
+  }
+  .cd-grid {
+    gap: 0.4rem;
+  }
+  .cd-num {
+    font-size: 2rem;
+    width: 44px;
+    padding-bottom: 2px;
+  }
+  .cd-lbl {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+  }
+  
+  /* Gallery Section */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 300px;
+    justify-items: center;
+  }
+  .gallery-item {
+    max-width: 280px;
+    width: 100%;
+    /* Soften rotation for mobile readability */
+    transform: rotate(calc(var(--rot) * 0.5)) translateY(0);
+  }
+  .gallery-caption {
+    font-size: 1.25rem;
+  }
+  
+  /* Venue Section */
+  .venue-card {
+    padding: 1.6rem 1.2rem;
+    border-radius: 20px;
+    border-top-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    gap: 1.4rem;
+  }
+  .venue-title {
+    font-size: 1.45rem;
+  }
+  .venue-address {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .venue-map-btn {
+    padding: 0.75rem 1.8rem;
+    font-size: 0.85rem;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Footer Section */
+  .footer-msg {
+    font-size: 1.1rem;
+    padding: 0 0.5rem;
+  }
+  .footer-name {
+    font-size: 2.1rem;
+  }
+  .footer-credit {
+    font-size: 0.75rem;
+  }
+  
+  /* Floating Audio Button with iOS Safe Area support */
+  #audio-btn {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    left: calc(16px + env(safe-area-inset-left, 0px));
+    width: 44px;
+    height: 44px;
+  }
 }
 
+/* 6. Compact Mobile Phones (max-width: 380px) */
 @media (max-width: 380px) {
   .envelope-wrapper {
     transform: scale(0.6);
+  }
+  .couple-name {
+    font-size: 2rem;
+  }
+  .cd-num {
+    font-size: 1.7rem;
+    width: 36px;
+  }
+  .cd-lbl {
+    font-size: 0.55rem;
+    letter-spacing: 0.5px;
+  }
+  .scratch-card-wrapper {
+    width: 180px;
+    height: 236px;
+  }
+  .scratch-card__under {
+    font-size: 1.6rem;
+  }
+}
+
+/* 7. Landscape Mobile Screens */
+@media (max-height: 520px) and (orientation: landscape) {
+  .envelope-wrapper {
+    transform: scale(0.5);
+    gap: 0.8rem;
+  }
+  .envelope-tap-title {
+    font-size: 1.5rem;
   }
 }
 

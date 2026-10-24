@@ -16,9 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const soundOnPath = `M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z`;
   const soundOffPath = `M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6H4.51c-.88 0-1.704.507-1.938 1.354A9.01 9.01 0 002.25 12c0 .83.112 1.633.322 2.396C2.806 15.244 3.63 15.75 4.51 15.75H6.75l4.72 4.72a.75.75 0 001.28-.53V3.06a.75.75 0 00-1.28-.53L6.75 8.25z`;
 
+  // Disable browser scroll restoration so it always starts at top
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
   // 1. ENTRY GATE DISMISS (INTERACTIVE ENVELOPE OPENING)
   if (openBtn && envelope) {
     openBtn.addEventListener("click", () => {
+      // Always reset scroll to the top hero section immediately
+      window.scrollTo(0, 0);
+
       // Start envelope opening transition
       envelope.classList.add("open");
       
@@ -30,18 +39,29 @@ document.addEventListener("DOMContentLoaded", () => {
       // Attempt to play music on interaction
       playMusic();
 
-      // Delay to let flaps open and card rise up
+      // Make main content visible immediately so Hero card is ready underneath
+      if (mainContent) {
+        mainContent.classList.add("visible");
+      }
+
+      // Delay to let flaps open, then smoothly unveil the Hero Section directly
       setTimeout(() => {
         entryGate.classList.add("dismissed");
         document.body.classList.remove("no-scroll");
-        mainContent.classList.add("visible");
+        
+        // Guarantee view is focused on Hero section
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        const heroSection = document.getElementById("hero");
+        if (heroSection) {
+          heroSection.scrollIntoView({ behavior: "instant", block: "start" });
+        }
         
         // Start Petals Canvas animation loop
         startPetalsAnimation();
         
-        // Initialize Scroll Reveal Elements
+        // Initialize Scroll Reveal Elements for subsequent sections
         initScrollReveal();
-      }, 2000);
+      }, 1400);
     });
   }
 
@@ -354,7 +374,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // 6. SCROLL REVEAL TRIGGERS
   function initScrollReveal() {
     const revealElements = [
-      document.querySelector("#hero .hero-card"),
       document.querySelector("#scratch-section"),
       document.querySelector("#countdown-section .cd-card"),
       document.querySelector("#gallery-section"),

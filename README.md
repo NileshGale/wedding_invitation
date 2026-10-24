@@ -53,14 +53,14 @@ A premium, interactive web-based digital wedding invitation built for **Sawali &
 - **Action**: Supports both mouse drags and touch events on mobile. Once a guest clears **40%** of a canvas, it fades out. When all 3 cards are scratched, the `.scratch-locked` class is removed, loading the remaining sections, and initiating scroll reveals.
 
 ### 4. Compact Countdown Section (`#countdown-section`)
-- Displays days, hours, minutes, and seconds remaining until **November 15, 2026, at 7:00 PM**.
+- Displays days, hours, minutes, and seconds remaining until **November 25, 2026, at 1:45 PM**.
 - styled as a compact glassmorphic card with inline numbers resting on golden lines.
 
 ### 5. Photo Polaroid Gallery (`#gallery-section`)
 - Tilted card frames rotating at slight angles (`--rot`). Hover states scale cards upwards and straighten them (`rotate(0deg)`) using smooth cubic-bezier transitions.
 
 ### 6. The Venue Section (`#venue-section`)
-- Displays `Rajalakshmi Kalyana Mandapam` details. Shows a venue thumbnail (`assets/venue.png`) and an ethnic styled detail card with a location view button leading directly to Google Maps coordinates.
+- Displays `Akshada Multipurpose Hall` details (Kaneriwadi, Kolhapur 416234). Shows a venue thumbnail (`assets/venue.png`) and an ethnic styled detail card with a location view button leading directly to Google Maps coordinates.
 
 ### 7. Floating Ambient Audio Player (`#audio-btn`)
 - A round glassmorphic button in the bottom left that plays/pauses the looped audio file (`#bg-music`). The SVG icon updates dynamically to show sound waves when playing or an "X" mark when muted.
