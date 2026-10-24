@@ -59,7 +59,7 @@ A premium, interactive web-based digital wedding invitation built for **Sawali &
 ### 5. Photo Polaroid Gallery (`#gallery-section`)
 - Tilted card frames rotating at slight angles (`--rot`). Hover states scale cards upwards and straighten them (`rotate(0deg)`) using smooth cubic-bezier transitions.
 
-### 6. The Venue Section (`#venue-section`)
+### 6. The Wedding Venue Section (`#venue-section`)
 - Displays `Akshada Multipurpose Hall` details (Kaneriwadi, Kolhapur 416234). Shows a venue thumbnail (`assets/venue.png`) and an ethnic styled detail card with a location view button leading directly to Google Maps coordinates.
 
 ### 7. Floating Ambient Audio Player (`#audio-btn`)

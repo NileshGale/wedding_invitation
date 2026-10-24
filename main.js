@@ -375,9 +375,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function initScrollReveal() {
     const revealElements = [
       document.querySelector("#scratch-section"),
+      document.querySelector("#ceremonies-section"),
       document.querySelector("#countdown-section .cd-card"),
       document.querySelector("#gallery-section"),
       document.querySelector("#venue-section .venue-card"),
+      document.querySelector("#reception-section .venue-card"),
       document.querySelector("#footer-section")
     ];
 

@@ -816,6 +816,241 @@ section {
   transform: translateY(-2px);
 }
 
+/* ==========================================================================
+   PRE-WEDDING CEREMONIES SECTION (ENGAGEMENT & HALDI)
+   ========================================================================== */
+#ceremonies-section {
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.06) 0%, transparent 80%);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.ceremonies-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-style: italic;
+  margin-top: -1.5rem;
+  margin-bottom: 3.5rem;
+  letter-spacing: 0.5px;
+}
+
+.ceremonies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.ceremony-card {
+  background: var(--glass-bg);
+  border: 1.5px solid var(--glass-border);
+  padding: 3rem 2rem 2.5rem 2rem;
+  border-radius: 24px;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 15px 35px rgba(80, 34, 32, 0.08);
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.ceremony-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 45px rgba(80, 34, 32, 0.16), 0 0 25px rgba(212, 175, 55, 0.3);
+  border-color: var(--accent-color);
+}
+
+.ceremony-card--haldi:hover {
+  box-shadow: 0 22px 45px rgba(180, 120, 0, 0.18), 0 0 25px rgba(245, 175, 25, 0.35);
+  border-color: #f5af19;
+}
+
+.ceremony-badge {
+  position: absolute;
+  top: -14px;
+  background: var(--primary-color);
+  color: var(--bg-light);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  padding: 0.4rem 1.4rem;
+  border-radius: 20px;
+  border: 1px solid var(--accent-color);
+  box-shadow: 0 4px 12px rgba(138, 79, 76, 0.3);
+}
+
+.ceremony-badge--haldi {
+  background: linear-gradient(135deg, #d48806 0%, #a66a00 100%);
+  border-color: #ffd666;
+  box-shadow: 0 4px 12px rgba(180, 120, 0, 0.35);
+}
+
+.ceremony-icon-wrapper {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  border: 1.5px solid var(--accent-color);
+  margin-bottom: 1.2rem;
+  color: var(--primary-color);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.2);
+  transition: transform 0.4s ease;
+}
+
+.ceremony-card:hover .ceremony-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.ceremony-icon-wrapper--haldi {
+  color: #b37400;
+  border-color: #f5af19;
+  background: radial-gradient(circle, rgba(245, 175, 25, 0.2) 0%, transparent 70%);
+  box-shadow: 0 6px 16px rgba(245, 175, 25, 0.25);
+}
+
+.ceremony-icon {
+  width: 44px;
+  height: 44px;
+}
+
+.ceremony-title {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.5px;
+}
+
+.ceremony-sub {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.ceremony-divider {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+.ceremony-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  padding: 1.3rem 1.4rem;
+  border-radius: 16px;
+  margin-bottom: 1.8rem;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.ceremony-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.ceremony-info-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--accent-color);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ceremony-info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ceremony-info-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.ceremony-info-val {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.ceremony-info-sub {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.ceremony-map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary-color);
+  color: var(--bg-light);
+  border: 1px solid var(--accent-color);
+  padding: 0.75rem 1.8rem;
+  border-radius: 30px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(138, 79, 76, 0.25);
+}
+
+.ceremony-map-btn:hover {
+  background: var(--accent-color);
+  color: var(--primary-dark);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.45);
+  transform: translateY(-2px);
+}
+
+.ceremony-map-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+.ceremony-map-btn--haldi {
+  background: linear-gradient(135deg, #d48806 0%, #a66a00 100%);
+  border-color: #ffd666;
+  box-shadow: 0 4px 14px rgba(180, 120, 0, 0.3);
+}
+
+.ceremony-map-btn--haldi:hover {
+  background: #f5af19;
+  color: #3d2400;
+}
+
 /* RSVP SECTION */
 #rsvp-section {
   background: radial-gradient(circle at center, rgba(138, 79, 76, 0.04) 0%, transparent 80%);
@@ -1695,6 +1930,61 @@ section {
   transform: translateY(-2px);
 }
 
+/* RECEPTION SECTION */
+#reception-section {
+  padding: 6rem 1.5rem;
+  background: radial-gradient(circle at center, rgba(138, 79, 76, 0.05) 0%, transparent 80%);
+}
+
+.reception-card {
+  border-top-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+.reception-time-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid var(--accent-color);
+  padding: 0.5rem 1.4rem;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.2rem;
+}
+
+.reception-time-icon {
+  width: 17px;
+  height: 17px;
+  color: var(--accent-color);
+}
+
+.reception-clock-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: -0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.reception-clock-icon {
+  width: 18px;
+  height: 18px;
+}
+
 /* ==========================================================================
    COMPREHENSIVE RESPONSIVE DESIGN (MOBILE, IPAD / TABLETS, & LAPTOPS)
    ========================================================================== */
@@ -1902,6 +2192,24 @@ section {
     letter-spacing: 1px;
   }
   
+  /* Ceremonies Section */
+  .ceremonies-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2.2rem;
+  }
+  .ceremonies-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 330px;
+    margin: 0 auto;
+  }
+  .ceremony-card {
+    padding: 2.5rem 1.3rem 2rem 1.3rem;
+  }
+  .ceremony-title {
+    font-size: 1.85rem;
+  }
+  
   /* Gallery Section */
   .gallery-grid {
     grid-template-columns: 1fr;
@@ -1999,9 +2307,11 @@ section {
 }
 
 /* SCRATCH GATE LOCK RULES */
+#main-content.scratch-locked #ceremonies-section,
 #main-content.scratch-locked #countdown-section,
 #main-content.scratch-locked #gallery-section,
 #main-content.scratch-locked #venue-section,
+#main-content.scratch-locked #reception-section,
 #main-content.scratch-locked #footer-section {
   display: none !important;
 }
