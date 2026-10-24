@@ -604,6 +604,7 @@ section {
   border: 1px solid rgba(0, 0, 0, 0.05);
   margin-bottom: 1.2rem;
   transition: filter 0.4s ease;
+  display: block;
 }
 
 .gallery-caption {
@@ -2091,7 +2092,7 @@ section {
     transform: none !important;
   }
 
-  /* Mobile Couple Photos Polaroid Animations */
+  /* Mobile Couple Photos Polaroid Styling */
   #gallery-section {
     overflow-x: clip;
   }
@@ -2119,8 +2120,6 @@ section {
     z-index: 4;
   }
 
-
-
   /* Touch / Tap State on Mobile (stays grounded vertically, slight scale & warm glow) */
   .gallery-item:active {
     transform: rotate(0deg) scale(1.03) !important;
@@ -2140,12 +2139,40 @@ section {
 
 /* 4. Mobile Phones (max-width: 640px) */
 @media (max-width: 640px) {
-  /* Scratch cards switch gracefully to 1 column on phones */
+  /* Scratch cards mobile layout: Row 1 = Month & Day, Row 2 = Year (centered) */
   .scratch-grid {
-    grid-template-columns: 1fr;
-    gap: 2.2rem;
-    max-width: 250px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem 1rem;
+    max-width: 340px;
+    margin: 0 auto;
     justify-items: center;
+  }
+
+  /* Year card centered on the second row */
+  .scratch-col:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .scratch-card-wrapper {
+    width: 145px;
+    height: 195px;
+    border-radius: 14px;
+  }
+
+  .scratch-card__under {
+    font-size: 1.45rem;
+    padding: 0.5rem;
+  }
+
+  .scratch-col-label {
+    font-size: 0.8rem;
+    letter-spacing: 2.5px;
+  }
+
+  .scratch-hint {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
   }
 }
 
@@ -2350,12 +2377,17 @@ section {
     font-size: 0.55rem;
     letter-spacing: 0.5px;
   }
+  .scratch-grid {
+    gap: 1.4rem 0.6rem;
+    max-width: 300px;
+  }
   .scratch-card-wrapper {
-    width: 180px;
-    height: 236px;
+    width: 135px;
+    height: 180px;
+    border-radius: 12px;
   }
   .scratch-card__under {
-    font-size: 1.6rem;
+    font-size: 1.25rem;
   }
 }
 

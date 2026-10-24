@@ -6,7 +6,7 @@ A premium, interactive web-based digital wedding invitation built for **Sawali &
 
 ## 📂 Project Structure & Files
 
-- **`home.html`**: Core HTML5 document containing structural elements for the entry gate, hero section, interactive scratch cards, live countdown, moments gallery, venue details, and ambient music controls.
+- **`index.html`**: Core HTML5 document containing structural elements for the entry gate, hero section, interactive scratch cards, live countdown, moments gallery, venue details, and ambient music controls.
 - **`style.css`**: Central stylesheet defining the color palette, typography (Cormorant Garamond & Montserrat), 3D envelope transitions, scrollbars, responsive grids, and section reveals.
 - **`main.js`**: Core JavaScript file managing interactive states: envelope wax seal opening delay, ambient audio compliance player, canvas-based falling rose petals, canvas-based touch scratch card unlocks, live countdown calculations, and scroll reveals.
 - **`couple_photo/`**: Directory containing images:
@@ -70,17 +70,17 @@ A premium, interactive web-based digital wedding invitation built for **Sawali &
 ## ✏️ How to Edit & Customize
 
 ### Change Groom & Bride Names
-Open `home.html` and search for `.couple-name`, `entry-gate__names`, and `footer-name` classes to edit the text (currently **Sawali & Vaibhav**).
+Open `index.html` and search for `.couple-name`, `entry-gate__names`, and `footer-name` classes to edit the text (currently **Sawali & Vaibhav**).
 
 ### Replace Ganesha SVG Icon
-Both Ganesha SVGs (in the entry card and hero card) use custom paths inside `<svg class="entry-gate__icon">` and `<svg class="hero-icon">` in `home.html`. You can replace the inner XML paths if you wish to use a different illustration.
+Both Ganesha SVGs (in the entry card and hero card) use custom paths inside `<svg class="entry-gate__icon">` and `<svg class="hero-icon">` in `index.html`. You can replace the inner XML paths if you wish to use a different illustration.
 
 ### Update Wedding Date & Time
 1. **Countdown calculations**: Open `main.js` and change `targetDateStr` (currently `"November 25, 2026 13:45:00"`).
-2. **Text displays**: Update the date labels inside `home.html` under the Countdown and Save the Date sections.
+2. **Text displays**: Update the date labels inside `index.html` under the Countdown and Save the Date sections.
 
 ### Change Background Music
-Open `home.html` and search for the `<audio>` tag:
+Open `index.html` and search for the `<audio>` tag:
 ```html
 <audio id="bg-music" loop src="song.mp3"></audio>
 ```

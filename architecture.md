@@ -22,8 +22,7 @@
 
 ```
 c:\Users\Lenovo\OneDrive\Desktop\vallari's project/
-├── index.html          # Default production entry point (mirrored from home.html for Netlify/GitHub Pages)
-├── home.html           # Core HTML source (contains the complete DOM hierarchy)
+├── index.html          # Core HTML document & production entry point (complete DOM hierarchy)
 ├── style.css           # Central stylesheet (Design tokens, 3D envelope, lightning borders, media queries)
 ├── main.js             # Logic controller (audio compliance, canvas scratch, petals animation, timer, reveals)
 ├── song.mp3            # Ambient background wedding track (loaded by <audio id="bg-music">)
@@ -41,11 +40,9 @@ c:\Users\Lenovo\OneDrive\Desktop\vallari's project/
     └── photo6.jpeg     # Polaroid 6: "Together Forever ♾️"
 ```
 
-> **Sync Rule:** Whenever changes are made to `home.html`, copy or sync them to `index.html` so hosting platforms (Netlify, Vercel, GitHub Pages) serve the updated root document.
-
 ---
 
-## 3. DOM Component Structure (`home.html` / `index.html`)
+## 3. DOM Component Structure (`index.html`)
 
 The document renders components in the following chronological top-down sequence:
 
@@ -109,10 +106,11 @@ graph TD
      - `photo3.jpeg`: *Moments of Love ❤️* (`--rot: -1.5deg`)
      - `photo4.jpeg`: *Laughter & Joy ✨* (`--rot: 2.5deg`)
      - `photo5.jpeg`: *Cherished Smiles 🌸* (`--rot: -2deg`)
+     - `photo6.jpeg`: *Together Forever ♾️* (`--rot: 1.5deg`)
    - Styled as authentic Polaroids with translucent tape stickers (`::before`), desktop hover straightening/zoom (`rotate(0deg) scale(1.05)`), and clean mobile styling:
-     - **Static Polaroids:** Natural authentic tilt without continuous swaying for maximum visual clarity and zero scrolling interference.
-     - **Scroll Reveal Stability:** Mobile overrides `.reveal { transform: none !important; }` so sections fade in purely with opacity without vertical layout shifts.
-     - **Touch Feedback:** Tap/active state subtly highlights the photo with a warm golden glow without moving vertically.
+     - **Natural Tilt:** Organic tilt without swaying or forced layout shift.
+     - **Scroll Reveal Stability:** Mobile overrides `.reveal { transform: none !important; }` so sections fade in without vertical jumping.
+     - **Touch Feedback:** Subtle scale and warm golden glow on touch.
 
 8. **The Wedding Venue (`#venue-section`):**
    - Card (`.venue-card`) displaying `assets/venue.jpeg`.
@@ -215,8 +213,8 @@ graph TD
 | **Laptops / Desktops** | `> 1024px` | 3-column scratch cards, 3-column polaroids (2×3 grid), full-size 450px envelope, spacious 650px hero card. |
 | **iPads & Tablets** | `768px – 1024px` | Envelope scaled to `0.85 – 0.9`. 3-column scratch cards fit side-by-side. Polaroids arrange into a balanced 2-column grid. |
 | **Phablets / Foldables**| `601px – 767px` | Envelope scaled to `0.82`. Polaroids 2-column. Scratch cards switch cleanly if under 640px. |
-| **Mobile Phones** | `381px – 600px` | Envelope scaled to `0.72`. Scratch cards stack to 1 centered column. Polaroids 1-column with softened tilt (`calc(var(--rot) * 0.5)`). iOS safe-area insets applied to floating music button. |
-| **Compact Phones** | `< 380px` (iPhone SE) | Envelope scaled to `0.6`. Countdown unit fonts reduced to `1.7rem`. Scratch wrapper scaled to `180px`. |
+| **Mobile Phones** | `381px – 600px` | Envelope scaled to `0.72`. Scratch cards arranged in 2-top (Month, Day) + 1-bottom centered (Year) layout (`145px × 195px`). Polaroids 1-column with softened tilt (`calc(var(--rot) * 0.5)`). iOS safe-area insets applied to floating music button. |
+| **Compact Phones** | `< 380px` (iPhone SE) | Envelope scaled to `0.6`. Countdown unit fonts reduced to `1.7rem`. Scratch wrapper scaled to `135px × 180px` in 2+1 centered layout. |
 | **Landscape Mobile** | `height < 520px` | Envelope scaled to `0.5` with reduced vertical gap so flaps and card remain within viewport bounds. |
 
 ---
@@ -226,9 +224,9 @@ graph TD
 - **To update wedding date & time for countdown:**  
   Edit `const targetDateStr` in [`main.js:187`](file:///c:/Users/Lenovo/OneDrive/Desktop/vallari's%20project/main.js#L187).
 - **To edit ceremony timings or addresses:**  
-  Edit `#ceremonies-section` in [`home.html`](file:///c:/Users/Lenovo/OneDrive/Desktop/vallari's%20project/home.html#L232-L345) and copy to `index.html`.
+  Edit `#ceremonies-section` in [`index.html`](file:///c:/Users/Lenovo/OneDrive/Desktop/vallari's%20project/index.html#L232-L345).
 - **To update reception date or venue:**  
-  Edit `#reception-section` in [`home.html`](file:///c:/Users/Lenovo/OneDrive/Desktop/vallari's%20project/home.html#L442-L485) and copy to `index.html`.
+  Edit `#reception-section` in [`index.html`](file:///c:/Users/Lenovo/OneDrive/Desktop/vallari's%20project/index.html#L425-L480).
 - **To swap photos:**  
   Place new files in `couple_photo/` (named `photo1.jpeg` through `photo6.jpeg`) or `assets/` (`venue.jpeg`, `reception.jpeg`).
 - **To deploy updates to the live web link:**  
