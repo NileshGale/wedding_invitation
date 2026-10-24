@@ -621,6 +621,8 @@ section {
   z-index: 10;
 }
 
+
+
 /* WEDDING EVENT SECTION */
 #events-section {
   background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 80%);
@@ -2079,6 +2081,61 @@ section {
     font-size: 1rem;
     letter-spacing: 2px;
   }
+
+  /* Disable vertical transform on scroll reveal for mobile to eliminate scroll jumping */
+  .reveal {
+    transform: none !important;
+    transition: opacity 0.7s ease-out !important;
+  }
+  .reveal.active {
+    transform: none !important;
+  }
+
+  /* Mobile Couple Photos Polaroid Animations */
+  #gallery-section {
+    overflow-x: clip;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 320px;
+    margin: 0 auto;
+    justify-items: center;
+  }
+
+  .gallery-item {
+    max-width: 290px;
+    width: 100%;
+    transform: rotate(calc(var(--rot) * 0.5));
+    opacity: 1;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+    will-change: transform, box-shadow;
+    position: relative;
+    overflow: visible;
+  }
+
+  .gallery-item::before {
+    z-index: 4;
+  }
+
+
+
+  /* Touch / Tap State on Mobile (stays grounded vertically, slight scale & warm glow) */
+  .gallery-item:active {
+    transform: rotate(0deg) scale(1.03) !important;
+    box-shadow: 0 18px 40px rgba(80, 34, 32, 0.22), 0 0 20px rgba(212, 175, 55, 0.3) !important;
+    z-index: 10 !important;
+  }
+
+  .gallery-caption {
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+  }
+
+  .gallery-item:active .gallery-caption {
+    color: var(--primary-dark);
+  }
 }
 
 /* 4. Mobile Phones (max-width: 640px) */
@@ -2222,21 +2279,16 @@ section {
     font-size: 1.85rem;
   }
   
-  /* Gallery Section */
+  /* Gallery Section - Fine-tuned for small phones */
   .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 300px;
-    justify-items: center;
+    gap: 2.2rem;
+    max-width: 295px;
   }
   .gallery-item {
     max-width: 280px;
-    width: 100%;
-    /* Soften rotation for mobile readability */
-    transform: rotate(calc(var(--rot) * 0.5)) translateY(0);
   }
   .gallery-caption {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
   
   /* Venue Section */

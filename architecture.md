@@ -11,7 +11,7 @@
 - **Primary Wedding Date & Time:** 25 November 2026 at 1:45 PM
 - **Key Ceremonies:**
   1. **Engagement (साखरपुडा):** 24 November 2026, 05:00 PM — Akshada Multipurpose Hall, Kaneriwadi, Kolhapur 416234
-  2. **Haldi (हळद):** 25 November 2026, 09:00 PM — Akshada Multipurpose Hall, Kaneriwadi, Kolhapur 416234
+  2. **Haldi (हळद):** 24 November 2026, 09:00 PM — Akshada Multipurpose Hall, Kaneriwadi, Kolhapur 416234
   3. **Wedding (शुभ विवाह):** 25 November 2026, 1:45 PM — Akshada Multipurpose Hall, Kaneriwadi, Kolhapur 416234
   4. **Reception (स्नेहभोजन):** 02 December 2026 (Wednesday), 7:00 PM Onwards — RJ Celebration, Gorewada Ring Road, Nagpur 440013
 - **Primary Live Link / Deployment:** `https://sawaliwedsvaibhav.netlify.app` (Netlify Drop) + GitHub Pages (`NileshGale/wedding_invitation`).
@@ -96,7 +96,7 @@ graph TD
 5. **Pre-Wedding Ceremonies (`#ceremonies-section`):**
    - 2 symmetric cards (`.ceremony-card`):
      - **Engagement Card (`.ceremony-card--engagement`):** Interlocked rings SVG, `24 November 2026 · 05:00 PM`, Akshada Multipurpose Hall, direct Google Maps button.
-     - **Haldi Card (`.ceremony-card--haldi`):** Auspicious Kalash SVG, `25 November 2026 · 09:00 PM`, Akshada Multipurpose Hall, turmeric-gold button & styling.
+     - **Haldi Card (`.ceremony-card--haldi`):** Auspicious Kalash SVG, `24 November 2026 · 09:00 PM`, Akshada Multipurpose Hall, turmeric-gold button & styling.
 
 6. **Wedding Countdown Timer (`#countdown-section`):**
    - Glassmorphic card (`.cd-card`) with script tagline, heading `The Wedding`, and date badge `25 November 2026 · 1:45 PM`.
@@ -109,8 +109,10 @@ graph TD
      - `photo3.jpeg`: *Moments of Love ❤️* (`--rot: -1.5deg`)
      - `photo4.jpeg`: *Laughter & Joy ✨* (`--rot: 2.5deg`)
      - `photo5.jpeg`: *Cherished Smiles 🌸* (`--rot: -2deg`)
-     - `photo6.jpeg`: *Together Forever ♾️* (`--rot: 1.5deg`)
-   - Styled as authentic Polaroids with translucent tape stickers (`::before`), shadow lifts, and straightening transitions on hover (`rotate(0deg) scale(1.05)`).
+   - Styled as authentic Polaroids with translucent tape stickers (`::before`), desktop hover straightening/zoom (`rotate(0deg) scale(1.05)`), and clean mobile styling:
+     - **Static Polaroids:** Natural authentic tilt without continuous swaying for maximum visual clarity and zero scrolling interference.
+     - **Scroll Reveal Stability:** Mobile overrides `.reveal { transform: none !important; }` so sections fade in purely with opacity without vertical layout shifts.
+     - **Touch Feedback:** Tap/active state subtly highlights the photo with a warm golden glow without moving vertically.
 
 8. **The Wedding Venue (`#venue-section`):**
    - Card (`.venue-card`) displaying `assets/venue.jpeg`.
