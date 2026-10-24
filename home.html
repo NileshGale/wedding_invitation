@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wedding Invitation | Nurul & Vallari</title>
+  <title>Wedding Invitation | Sawali & Vaibhav</title>
   
   <!-- Primary Meta Tags -->
-  <meta name="title" content="Wedding Invitation | Nurul & Vallari">
-  <meta name="description" content="We invite you to celebrate our love and union. Join us on 15th November 2026 at Mangal Murti, Nagpur.">
+  <meta name="title" content="Wedding Invitation | Sawali & Vaibhav">
+  <meta name="description" content="We invite you to celebrate our love and union. Join us on 25th November 2026 at 1:45 PM.">
   
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Wedding Invitation | Nurul & Vallari">
-  <meta property="og:description" content="We invite you to celebrate our love and union. Join us on 15th November 2026 at Mangal Murti, Nagpur.">
-  <meta property="og:image" content="couple_photo/photo1.png">
+  <meta property="og:title" content="Wedding Invitation | Sawali & Vaibhav">
+  <meta property="og:description" content="We invite you to celebrate our love and union. Join us on 25th November 2026 at 1:45 PM.">
+  <meta property="og:image" content="couple_photo/photo1.jpeg">
   
   <!-- Preconnect to Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
 
   <!-- BACKGROUND MUSIC -->
   <!-- Replace the src URL with your preferred wedding track URL or local asset path, e.g. "assets/bg-music.mp3" -->
-  <audio id="bg-music" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+  <audio id="bg-music" loop src="song.mp3"></audio>
 
   <!-- PETALS CANVAS (FALLING FLOWERS EFFECT) -->
   <canvas id="petals-canvas"></canvas>
@@ -34,7 +34,7 @@
   <!-- ENTRY GATE (ENVELOPE OVERLAY) -->
   <div id="entry-gate" class="entry-gate">
     <div class="entry-gate__overlay"></div>
-    <img src="couple_photo/photo1.png" alt="Wedding BG" class="entry-gate__bg">
+    <img src="couple_photo/photo1.jpeg" alt="Wedding BG" class="entry-gate__bg">
     
     <div class="envelope-wrapper">
       <h2 class="envelope-tap-title">Tap to Reveal</h2>
@@ -76,17 +76,18 @@
           </svg>
           
           <div class="entry-gate__names">
-            Nurul
+            Sawali
             <span class="entry-gate__amp">&</span>
-            Vallari
+            Vaibhav
           </div>
+          <div class="entry-gate__date">25 . 11 . 2026</div>
           
         </div>
         
         <!-- Wax Seal button -->
         <button id="open-btn" class="wax-seal" aria-label="Open Invitation">
           <div class="wax-seal__inner">
-            <span class="wax-seal__initial">N</span>
+            <span class="wax-seal__initial">S</span>
             <svg viewBox="0 0 24 24" fill="currentColor" class="wax-seal__heart">
               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
             </svg>
@@ -141,7 +142,7 @@
         
         <div class="intro-text">Together with their families, we invite you to join us in celebrating the union of</div>
         
-        <div class="couple-name">Nurul & Vallari</div>
+        <div class="couple-name">Sawali & Vaibhav</div>
         
         <div class="amp-row">
           <div class="amp-line"></div>
@@ -151,8 +152,8 @@
         
         <!-- Editable Parents Placeholders -->
         <div class="parent-sub">
-          <strong>Groom:</strong> Son of Mr. & Mrs. Ansari <br>
-          <strong>Bride:</strong> Daughter of Mr. & Mrs. Patil
+          <strong>Bride:</strong> Sawali <br>
+          <strong>Groom:</strong> Vaibhav
         </div>
         
       </div>
@@ -186,7 +187,7 @@
         <div class="scratch-col">
           <span class="scratch-col-label">Day</span>
           <div class="scratch-card-wrapper">
-            <div class="scratch-card__under">15</div>
+            <div class="scratch-card__under">25</div>
             <canvas id="scratch-day-canvas" class="scratch-canvas"></canvas>
           </div>
           <span class="scratch-hint">↑ Scratch</span>
@@ -209,7 +210,7 @@
       <div class="cd-card">
         <div class="cd-script">A lifetime of togetherness begins with one sacred step</div>
         <h2 class="cd-heading">The Wedding</h2>
-        1
+        <div class="cd-date">25 November 2026 · 1:45 PM</div>
         <div class="cd-grid">
           <div class="cd-unit">
             <div id="days" class="cd-num">00</div>
@@ -238,23 +239,33 @@
       
       <div class="gallery-grid">
         <!-- Polaroid Card 1 -->
-        <div class="gallery-item" style="--rot: -3deg;">
-          <img src="couple_photo/photo1.png" alt="Couple Moments 1" class="gallery-img">
+        <div class="gallery-item" style="--rot: -2.5deg;">
+          <img src="couple_photo/photo1.jpeg" alt="Couple Moments 1" class="gallery-img">
           <div class="gallery-caption">The Beginning ✨</div>
         </div>
         <!-- Polaroid Card 2 -->
         <div class="gallery-item" style="--rot: 2deg;">
-          <img src="couple_photo/photo2.png" alt="Couple Moments 2" class="gallery-img">
+          <img src="couple_photo/photo2.jpeg" alt="Couple Moments 2" class="gallery-img">
           <div class="gallery-caption">Hand in Hand 🤝</div>
         </div>
         <!-- Polaroid Card 3 -->
         <div class="gallery-item" style="--rot: -1.5deg;">
-          <img src="couple_photo/photo3.png" alt="Couple Moments 3" class="gallery-img">
+          <img src="couple_photo/photo3.jpeg" alt="Couple Moments 3" class="gallery-img">
           <div class="gallery-caption">Moments of Love ❤️</div>
         </div>
         <!-- Polaroid Card 4 -->
-        <div class="gallery-item" style="--rot: 4deg;">
-          <img src="couple_photo/photo4.png" alt="Couple Moments 4" class="gallery-img">
+        <div class="gallery-item" style="--rot: 2.5deg;">
+          <img src="couple_photo/photo4.jpeg" alt="Couple Moments 4" class="gallery-img">
+          <div class="gallery-caption">Laughter & Joy ✨</div>
+        </div>
+        <!-- Polaroid Card 5 -->
+        <div class="gallery-item" style="--rot: -2deg;">
+          <img src="couple_photo/photo5.jpeg" alt="Couple Moments 5" class="gallery-img">
+          <div class="gallery-caption">Cherished Smiles 🌸</div>
+        </div>
+        <!-- Polaroid Card 6 -->
+        <div class="gallery-item" style="--rot: 1.5deg;">
+          <img src="couple_photo/photo6.jpeg" alt="Couple Moments 6" class="gallery-img">
           <div class="gallery-caption">Together Forever ♾️</div>
         </div>
       </div>
@@ -297,11 +308,11 @@
     <section id="footer-section">
       <p class="footer-msg">"Our life together will be beautiful, but it will be complete only with your blessings and presence."</p>
       <span class="footer-regards">Warmly Invited By</span>
-      <span class="footer-name">Nurul & Vallari</span>
+      <span class="footer-name">Sawali & Vaibhav</span>
       <p class="footer-msg" style="font-size: 1rem; opacity: 0.8; margin-top: 1rem;">& The Entire Family</p>
       
       <div class="footer-credit">
-        Designed with Love for Nurul & Vallari's Wedding · 2026
+        Designed with Love for Sawali & Vaibhav's Wedding · 2026
       </div>
     </section>
 

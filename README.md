@@ -1,6 +1,6 @@
-# Wedding Invitation — Nurul & Vallari
+# Wedding Invitation — Sawali & Vaibhav
 
-A premium, interactive web-based digital wedding invitation built for **Nurul & Vallari's Wedding** on **November 15, 2026**. Designed with a luxurious, warm Indian wedding theme featuring deep wine-red/maroon colors, warm cream backgrounds, and gold accents.
+A premium, interactive web-based digital wedding invitation built for **Sawali & Vaibhav's Wedding** on **November 25, 2026, at 1:45 PM**. Designed with a luxurious, warm Indian wedding theme featuring deep wine-red/maroon colors, warm cream backgrounds, and gold accents.
 
 ---
 
@@ -10,9 +10,8 @@ A premium, interactive web-based digital wedding invitation built for **Nurul & 
 - **`style.css`**: Central stylesheet defining the color palette, typography (Cormorant Garamond & Montserrat), 3D envelope transitions, scrollbars, responsive grids, and section reveals.
 - **`main.js`**: Core JavaScript file managing interactive states: envelope wax seal opening delay, ambient audio compliance player, canvas-based falling rose petals, canvas-based touch scratch card unlocks, live countdown calculations, and scroll reveals.
 - **`couple_photo/`**: Directory containing images:
-  - `photo1.png`: Envelope cover background (blurred artistically) and Hero section thumbnail.
-  - `photo2.png`: Event grid background frame.
-  - `photo3.png` & `photo4.png`: Moments polaroid gallery images.
+  - `photo1.jpeg`: Envelope cover background (blurred artistically) and Hero section thumbnail.
+  - `photo1.jpeg` through `photo6.jpeg`: Moments polaroid gallery images.
 - **`assets/`**: Directory for external elements:
   - `assets/venue.png`: Venue card thumbnail.
 
@@ -71,19 +70,19 @@ A premium, interactive web-based digital wedding invitation built for **Nurul & 
 ## ✏️ How to Edit & Customize
 
 ### Change Groom & Bride Names
-Open `home.html` and search for `.couple-name`, `entry-gate__names`, and `footer-name` classes to edit the text (currently **Nurul & Vallari**).
+Open `home.html` and search for `.couple-name`, `entry-gate__names`, and `footer-name` classes to edit the text (currently **Sawali & Vaibhav**).
 
 ### Replace Ganesha SVG Icon
 Both Ganesha SVGs (in the entry card and hero card) use custom paths inside `<svg class="entry-gate__icon">` and `<svg class="hero-icon">` in `home.html`. You can replace the inner XML paths if you wish to use a different illustration.
 
 ### Update Wedding Date & Time
-1. **Countdown calculations**: Open `main.js` and change `targetDateStr` (currently `"November 15, 2026 19:00:00"`).
+1. **Countdown calculations**: Open `main.js` and change `targetDateStr` (currently `"November 25, 2026 13:45:00"`).
 2. **Text displays**: Update the date labels inside `home.html` under the Countdown and Save the Date sections.
 
 ### Change Background Music
 Open `home.html` and search for the `<audio>` tag:
 ```html
-<audio id="bg-music" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+<audio id="bg-music" loop src="song.mp3"></audio>
 ```
 Replace the `src` attribute with a local file link (e.g., `assets/bg-music.mp3`) or any hosted MP3 audio link.
 

@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 4. WEDDING COUNTDOWN TIMER
-  const targetDateStr = "November 15, 2026 19:00:00";
+  const targetDateStr = "November 25, 2026 13:45:00";
   const targetDate = new Date(targetDateStr).getTime();
 
   const daysEl = document.getElementById("days");
